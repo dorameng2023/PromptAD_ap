@@ -1,6 +1,6 @@
 # PyTorch
-pip3 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-
+# pip3 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install setuptools==59.5.0
 pip install --upgrade diffusers[torch]
 pip install opencv-python pycocotools matplotlib onnxruntime onnx ipykernel

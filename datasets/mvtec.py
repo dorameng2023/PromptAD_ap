@@ -4,10 +4,10 @@ import random
 
 mvtec_classes = ['carpet', 'grid', 'leather', 'tile', 'wood',
                    'bottle', 'cable', 'capsule', 'hazelnut', 'metal_nut', 'pill',
-                   'screw', 'toothbrush', 'transistor', 'zipper']
+                    'screw', 'toothbrush', 'transistor', 'zipper']
+# mvtec_classes = ['screw']
 
-
-MVTEC2D_DIR = './anomaly_detection/mvtec_anomaly_detection'
+MVTEC2D_DIR = './DATA/anomaly_detection/mvtec_anomaly_detection'
 
 
 def load_mvtec(category, k_shot):

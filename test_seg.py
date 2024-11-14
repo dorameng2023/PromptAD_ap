@@ -36,7 +36,7 @@ def test(model,
 
         data = [model.transform(Image.fromarray(f.numpy())) for f in data]
         data = torch.stack(data, dim=0)
-
+                 
         for d, n, l, m in zip(data, name, label, mask):
             test_imgs += [denormalization(d.cpu().numpy())]
             m = m.numpy()
@@ -88,7 +88,7 @@ def main(args):
 
     # as the pro metric calculation is costly, we only calculate it in the last evaluation
     metrics = test(model, args, test_dataloader, device, img_dir=img_dir, check_path=check_path)
-
+    print("metric", )
     p_roc = round(metrics['p_roc'], 2)
     object = kwargs['class_name']
     print(f'Object:{object} =========================== Pixel-AUROC:{p_roc}\n')

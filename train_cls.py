@@ -13,6 +13,8 @@ from torchvision import transforms
 import random
 from tqdm import tqdm
 
+import time ########## compute traning and test computation time, change the result save path
+
 TASK = 'CLS'
 
 
@@ -92,7 +94,7 @@ def fit(model,
             abnormal_text_features_ahchor = abnormal_text_features_ahchor / abnormal_text_features_ahchor.norm(dim=-1, keepdim=True)
             abnormal_text_features = abnormal_text_features / abnormal_text_features.norm(dim=-1, keepdim=True)
 
-            l_pos = torch.einsum('nc,cm->nm', cls_feature, normal_text_features_ahchor.transpose(0, 1))
+            l_pos = torch.einsum('nc,cm->nm', cls_feature, normal_text_features_ahchor.transpose(0, 1)) ### the meaning of cm->nm      ???
             l_neg_v2t = torch.einsum('nc,cm->nm', cls_feature, abnormal_text_features.transpose(0, 1))
 
             if model.precision == 'fp16':
